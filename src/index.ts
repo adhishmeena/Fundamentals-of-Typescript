@@ -58,3 +58,31 @@ const myname: User1={
     id:1,
     name:"John"
 }
+
+
+// Type Assertion
+
+let cid:any=1
+//let custtomerId=<number>cid
+let custtomerId=cid as number
+
+
+// functions
+
+// syntax is MultiplyNum(variable name: variable type , variable name ..........) : return type {
+       
+
+//return returnType
+
+///      }
+
+//Example
+function MultiplyNum(x:number , y:number) : number {
+    return x*y
+}
+
+
+function message(x:number , y:number) : void {
+    console.log("welcome to my fundamentals of  typescript")
+}
+
