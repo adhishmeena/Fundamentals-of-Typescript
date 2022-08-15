@@ -86,3 +86,55 @@ function message(x:number , y:number) : void {
     console.log("welcome to my fundamentals of  typescript")
 }
 
+/// Interfaces 
+interface ConInterface{
+
+    id:number
+   readonly name:string
+    ageofUser?:number // ? represents that this is an optional feild  
+}
+
+
+const user2: ConInterface = {
+    id:1,
+    name:'John'
+}
+
+
+user2.id=5; 
+//user2.name="Adhish" // this property is in read only mode so we can not assign value to it 
+
+
+// remember we can not use interface with union or primitives but we can use types
+
+
+//Inteface can also be used with functions 
+
+interface Mathfun {
+    (x:number , y: number):number
+}
+
+const add: Mathfun= (x:number , y:number): number => x-y
+
+
+////////////////////////////////////////////////////////////////////////////
+
+class Customer{   
+
+    id:number  // this property are public by default but we change the access modifier for this lang properties as per our requirements 
+    private name:string // This property can only be accessed in this class itself we can not change it's value by access this property outside class. 
+
+    constructor(id:number, name:string)
+    {
+   this.id=id
+   this.name=name
+
+    }
+
+}
+
+const Customer1= new Customer(1,'Adhish Meena')
+console.log(Customer1)
+
+
+
