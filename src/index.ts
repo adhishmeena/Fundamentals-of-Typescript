@@ -123,7 +123,7 @@ class Customer{
 
     id:number  // this property are public by default but we change the access modifier for this lang properties as per our requirements 
     private name:string // This property can only be accessed in this class itself we can not change it's value by access this property outside class. 
-
+                        // when we mention protected we can access this property in another class by extending this class(customer).
     constructor(id:number, name:string)
     {
    this.id=id
@@ -131,10 +131,64 @@ class Customer{
 
     }
 
+    register(){
+       return `${this.name} is now registered`
+    }
+
+
 }
 
 const Customer1= new Customer(1,'Adhish Meena')
-console.log(Customer1)
+console.log(Customer1.register())
 
 
+
+//////////////////////////////////Interface with class ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+interface CustomerInterface { // always remember implements force your class to implement property and methods that is present in interface or you can say it is like a governance body 
+
+    id:number
+    name:string
+    register():string
+}
+
+
+class Customerwithinterface implements CustomerInterface {   
+
+    id:number  // this property are public by default but we change the access modifier for this lang properties as per our requirements 
+    name:string // This property can only be accessed in this class itself we can not change it's value by access this property outside class. 
+                        // when we mention protected we can access this property in another class by extending this class(customer).
+    constructor(id:number, name:string)
+    {
+   this.id=id
+   this.name=name
+
+    }
+
+    register(){
+       return `${this.name} is now registered`
+    }
+
+
+}
+
+const Customer2= new Customerwithinterface(1,'Adhish Meena')
+console.log(Customer2.register())
+
+
+/////////////////////////////////////////Inheritance /////////////////////////////////////////////////////////////////////////////////////////////
+
+
+class worker extends Customerwithinterface{
+    designation:string
+
+    constructor(id:number , name:string, designation:string)    
+    {
+         super(id,name)// this will initialize the id and name property of parent class 
+         this.designation=designation
+    }
+}
+
+const emp = new worker(3,"Meena", "Developer")
+
+console.log(emp.register())
 
