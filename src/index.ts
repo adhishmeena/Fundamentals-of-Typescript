@@ -1,6 +1,6 @@
 // Typescript is a statically typed language. It means that you need to first declare the variable type before assigning any value
 // Browser can not read type script so we need to compile it first as we do in most of the statically typed language 
-// Once the compilation is done , It will generate the javascript file that you can be used with our index.html file 
+// Once the compilation is done , It will generate the javascript file that can be used with our index.html file 
 
 
 
